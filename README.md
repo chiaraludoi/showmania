@@ -1,14 +1,25 @@
-# ShowMania - No Ads Version
+# ShowMania - Ad-Free Version
 
 Modified IPA with all ad integrations removed.
 
-## Changes Made
-- Removed AppLovin SDK interstitial ads initialization
-- Removed Google AdMob banner ads rendering
-- Removed App Open Ads (on app resume)
-- Removed Google AdMob interstitial ads
-- Disabled remote ad configuration fetching
-- All ad components render empty views
+## Download
+
+[📥 Download HDO-Box-ShowMania-NoAds.ipa](HDO-Box-ShowMania-NoAds.ipa)
+
+## What Was Removed
+
+| Ad Type | SDK | Status |
+|---------|-----|--------|
+| Banner Ads | Google AdMob + AppLovin | ✅ Removed |
+| Interstitial Ads | AppLovin MAX | ✅ Removed |
+| Interstitial Ads | Google AdMob | ✅ Removed |
+| App Open Ads | Google AdMob | ✅ Removed |
+| Remote Ad Config | GitHub JSON | ✅ Disabled |
 
 ## Installation
-Download the IPA from [Releases](../../releases) and sideload using your preferred method (AltStore, Sideloadly, etc.)
+
+Download the IPA and sideload using AltStore, Sideloadly, or your preferred method.
+
+## Documentation
+
+See [PATCHING_GUIDE.md](PATCHING_GUIDE.md) for full technical details on every patch applied and instructions for re-applying to future versions.
