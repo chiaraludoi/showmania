@@ -1,25 +1,12 @@
-# ShowMania - Ad-Free Version
+# Shows for iPhone
 
-Modified IPA with all ad integrations removed.
+This iOS 16+ app opens 1Shows in WKWebView and provides Back, Home, and Reload controls. Browsing and playback depend on the live site and its player compatibility with WKWebView.
 
-## Download
+## Export an IPA for a registered iPhone
 
-[📥 Download HDO-Box-ShowMania-NoAds.ipa](HDO-Box-ShowMania-NoAds.ipa)
+1. On a Mac with Xcode installed, unzip the project and open Shows.xcodeproj.
+2. Under the Shows target's Signing & Capabilities tab, select your Apple Developer team and set a unique bundle identifier.
+3. Select Any iOS Device as the build destination and choose Product > Archive.
+4. In Organizer, choose Distribute App and select the registered-device distribution option for your Xcode version. Follow the prompts to export the IPA for your registered iPhone.
 
-## What Was Removed
-
-| Ad Type | SDK | Status |
-|---------|-----|--------|
-| Banner Ads | Google AdMob + AppLovin | ✅ Removed |
-| Interstitial Ads | AppLovin MAX | ✅ Removed |
-| Interstitial Ads | Google AdMob | ✅ Removed |
-| App Open Ads | Google AdMob | ✅ Removed |
-| Remote Ad Config | GitHub JSON | ✅ Disabled |
-
-## Installation
-
-Download the IPA and sideload using AltStore, Sideloadly, or your preferred method.
-
-## Documentation
-
-See [PATCHING_GUIDE.md](PATCHING_GUIDE.md) for full technical details on every patch applied and instructions for re-applying to future versions.
+The project was authored on Windows. Xcode compilation, signing, and playback on iPhone still need to be verified.

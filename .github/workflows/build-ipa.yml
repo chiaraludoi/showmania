@@ -1,0 +1,30 @@
+name: Build unsigned IPA
+
+on:
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+jobs:
+  build:
+    runs-on: macos-15
+    steps:
+      - uses: actions/checkout@v4
+      - name: Build for iPhone
+        run: |
+          xcodebuild -project Shows.xcodeproj -target Shows \
+            -configuration Release -sdk iphoneos ARCHS=arm64 \
+            CONFIGURATION_BUILD_DIR="$PWD/build" CODE_SIGNING_ALLOWED=NO build
+      - name: Package IPA
+        run: |
+          test -f build/Shows.app/Shows
+          mkdir -p Payload
+          ditto build/Shows.app Payload/Shows.app
+          ditto -c -k --keepParent Payload Shows-unsigned.ipa
+          unzip -t Shows-unsigned.ipa
+      - uses: actions/upload-artifact@v4
+        with:
+          name: Shows-unsigned
+          path: Shows-unsigned.ipa
+          if-no-files-found: error
